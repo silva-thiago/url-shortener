@@ -1,0 +1,28 @@
+{% include "model-head.html" %}
+
+{% load crispy_forms_tags %}
+
+<!-- Default form login -->
+<form class="form-signin" action="" method="POST">
+    {% csrf_token %}
+    <img class="mb-4" src="" alt="" width="72" height="72">
+
+    <h1 class="h3 font-weight-normal text-center mb-3">Please sign up</h1>
+
+    {{ form|crispy }}
+
+    <!-- Sign in button -->
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+
+    {% for message in messages %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>ERROR!</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    <p class="my-4 text-muted text-center">&copy; 2020 Thiago Silva</p>
+</form>
+<!--/.Default form login -->

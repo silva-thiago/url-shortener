@@ -1,0 +1,48 @@
+{% include "model-head.html" %}
+
+{% load crispy_forms_tags %}
+
+<!-- Default form login -->
+<form class="form-signin" action="" method="POST">
+    {% csrf_token %}
+    <img class="mb-4" src="" alt="" width="72" height="72">
+
+    <h1 class="h3 font-weight-normal text-center mb-3">Please sign in</h1>
+
+    <!-- Username -->
+    {{ form|crispy }}
+
+    <div class="d-flex justify-content-around my-2">
+        <div>
+            <!-- Remember me -->
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+            </div>
+        </div>
+<!--        <div>-->
+<!--            &lt;!&ndash; Forgot password &ndash;&gt;-->
+<!--            <a href="">Forgot password?</a>-->
+<!--        </div>-->
+    </div>
+
+    <!-- Sign in button -->
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+    {% for message in messages %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>ERROR!</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    <!-- Register -->
+    <p class="my-4 text-center">Not a member?
+        <a href="/accounts/register/">Sign Up</a>
+    </p>
+
+    <p class="my-4 text-muted text-center">&copy; 2020 Thiago Silva</p>
+</form>
+<!--/.Default form login -->

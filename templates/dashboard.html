@@ -1,0 +1,26 @@
+{% include "model-head.html" %}
+
+<header>
+    {% include "model-navbar.html" %}
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+    <div class="container">
+        <form class="my-5">
+            <fieldset>
+                <div class="form-group">
+                    <label for="urlInput">Default URL</label>
+                    <input type="text" id="urlInput" class="form-control" placeholder="Paste or type an valid URL here">
+                </div>
+                <button type="submit" class="btn btn-primary justify-center mt-2 mb-4">SHORTENER URL</button>
+                <div class="form-group">
+                    <label for="urlOutput">New URL</label>
+                    <input type="text" id="urlOutput" class="form-control" placeholder="...">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</main>
+
+{% include "model-footer.html" %}
