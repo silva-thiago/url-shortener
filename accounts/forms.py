@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth import authenticate, get_user_model
+from django import forms
 
 User = get_user_model()
 
@@ -46,3 +47,8 @@ class UserSignUpForm(forms.ModelForm):
             if email_qs.exists():
                 raise forms.ValidationError('This email has already been registered')
             return super(UserSignUpForm, self).clean(*args, **kwargs)
+
+
+class url_form(forms.Form):
+    urlInput = forms.CharField(label='URL Input', max_length=100)
+    urlOutput = forms.CharField(label='URL Input', max_length=100)
