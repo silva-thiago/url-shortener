@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # Custom Apps
     'crispy_forms',
     'accounts',
+    'urls',
     'users',
 ]
 
