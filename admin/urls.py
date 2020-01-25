@@ -20,7 +20,7 @@ from django.urls import path
 
 from accounts.views import signin_view, signup_view, signout_view
 from users.views import signin
-from urls.views import urls_list
+from urls.views import urls_list, shortener_url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +28,6 @@ urlpatterns = [
     path('accounts/login/', signin_view),
     path('accounts/register/', signup_view),
     path('accounts/logout/', signout_view),
+    path('shortener_url', shortener_url),
     path('urls/', urls_list),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
