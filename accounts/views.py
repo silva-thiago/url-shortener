@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, get_user_model, login, logout
+from django.contrib.auth import authenticate, login, logout
+
 from .forms import UserSignInForm, UserSignUpForm
 
 
@@ -31,7 +32,7 @@ def signup_view(request):
         login(request, new_user)
         if next:
             return redirect(next)
-        return redirect('/')
+        return redirect('/accounts/login')
 
     context = {'form': form, }
     return render(request, 'signup.html', context)
