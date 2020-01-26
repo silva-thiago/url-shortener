@@ -1,4 +1,3 @@
-from django import forms
 from django.contrib.auth import authenticate, get_user_model
 from django import forms
 
@@ -31,12 +30,7 @@ class UserSignUpForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = [
-            'username',
-            'email',
-            'email2',
-            'password'
-        ]
+        fields = ['username', 'email', 'email2', 'password']
 
         def clean(self, *args, **kwargs):
             email = self.cleaned_data.get('email')
@@ -49,6 +43,6 @@ class UserSignUpForm(forms.ModelForm):
             return super(UserSignUpForm, self).clean(*args, **kwargs)
 
 
-class url_form(forms.Form):
-    urlInput = forms.CharField(label='URL Input', max_length=100)
-    urlOutput = forms.CharField(label='URL Input', max_length=100)
+class UrlForm(forms.Form):
+    url_input = forms.CharField(label='URL Input', max_length=100)
+    url_output = forms.CharField(label='URL Input', max_length=100)
