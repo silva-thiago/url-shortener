@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path
 
 from accounts.views import signin_view, signup_view, signout_view
-from users.views import signin
+from dashboard.views import signin
 from urls.views import urls_list, shortener_url
 
 urlpatterns = [
