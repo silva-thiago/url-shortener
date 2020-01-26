@@ -13,12 +13,10 @@ def urls_list(request):
 @csrf_protect
 def shortener_url(request):
     if request.method == 'POST':
-        # print(request.POST.get('urlInput', ''))
-        urlinput = request.POST.get('urlInput', '')
+        url_input = request.POST.get('urlInput', '')
 
-        if urlinput:
-            urlOutput = urllib.request.urlopen("http://tinyurl.com/api-create.php?url=%s" % urllib.parse.quote(urlinput)).read()
-            # print(urlOutput)
-            Url.objects.create(urlInput=urlinput, urlOutput=urlOutput.decode('utf8'))
+        if url_input:
+            url_output = urllib.request.urlopen("http://tinyurl.com/api-create.php?url=%s" % urllib.parse.quote(url_input)).read()
+            Url.objects.create(urlInput=url_input, urlOutput=url_output.decode('utf8'))
 
-    return render(request, 'dashboard.html', {'urlOutput': urlOutput.decode('utf8')})
+    return render(request, 'dashboard.html', {'urlOutput': url_output.decode('utf8')})
