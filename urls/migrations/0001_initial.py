@@ -5,7 +5,6 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -16,7 +15,7 @@ class Migration(migrations.Migration):
             name='Url',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date_create', models.DateTimeField(default=django.utils.timezone.now, editable=False)),
+                ('generatedDate', models.DateTimeField(default=django.utils.timezone.now, editable=False)),
                 ('urlInput', models.CharField(blank=True, max_length=250, null=True)),
                 ('urlOutput', models.CharField(blank=True, max_length=250, null=True)),
             ],

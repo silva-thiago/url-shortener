@@ -12,16 +12,25 @@
 
             <fieldset>
                 <div class="form-group">
-                    <label for="urlInput">Default URL</label>
-                    <input type="text" id="urlInput" name="urlInput" class="form-control" placeholder="Paste or type an valid URL here">
+                    <label for="urlInput">Original URL</label>
+                    <input type="text" id="urlInput" name="urlInput" class="form-control" placeholder="Paste or type an valid URL here" autofocus>
                 </div>
-                <button type="submit" class="btn btn-primary justify-center mt-2 mb-4">SHORTENER URL</button>
+                <button type="submit" class="btn btn-primary justify-center mt-2 mb-4">SHORTENER</button>
                 <div class="form-group">
-                    <label for="urlOutput">New URL</label>
+                    <label for="urlOutput">Shortened URL</label>
                     <input type="text" id="urlOutput" name="urlOutput" value="{{ urlOutput }}" class="form-control" placeholder="..." readonly>
                 </div>
             </fieldset>
         </form>
+
+        {% for message in messages %}
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>INFO:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
     </div>
 </main>
 
