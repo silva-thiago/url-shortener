@@ -1,12 +1,12 @@
 # URL Shortener
 URL shortening service developed by Thiago Silva. The user could access a list of URLs that had been shortened in the 
-past after logging in to their Google Account. And the user could see additional details via the "details" link next 
-to any shortened URL.
+past after logging in to their Account. And the user can see more information in the link "URLs List"
+for any shortened URL.
 
 ## Starting project
 
 #### Create the database in MySQL
-* create database db_urlshortener
+* create database db_shortener_url
 
 #### Inside the root directory, create and activate your venv
 * python3 -m venv venv
@@ -15,11 +15,14 @@ to any shortened URL.
 #### Install project dependencies
 * pip install -r requirements.txt
 
-#### Migrating data to the database
-* python manage.py makemigrations
+#### System administrator access
+* python manage.py createsuperuser
 
 #### Creating the database tables
 * python manage.py migrate
+
+#### Migrating changes to the database
+* python manage.py makemigrations
 
 #### Running the project
 * python manage.py runserver
@@ -31,8 +34,5 @@ to any shortened URL.
 * pip install django
 * pip install mysqlclient
 
-#### System administrator access
-* python manage.py createsuperuser
-
-#### Saving dependencies to a file
+#### Saving development dependencies to a file
 * pip freeze > requirements.txt
