@@ -16,21 +16,21 @@ for any shortened URL.
 * pip install -r requirements.txt
 
 #### System administrator access
-* python manage.py createsuperuser
+* python3 manage.py createsuperuser
 
 #### Creating the database tables
-* python manage.py migrate
+* python3 manage.py migrate
 
 #### Migrating changes to the database
-* python manage.py makemigrations
+* python3 manage.py makemigrations
 
 #### Running the project
-* python manage.py runserver
+* python3 manage.py runserver
 
 #### Useful commands for development
 * django-admin startproject PROJECT_NAME .
-* python manage.py startapp MODULE_NAME
-* python manage.py collectstatic
+* python3 manage.py startapp MODULE_NAME
+* python3 manage.py collectstatic
 * pip install django
 * pip install mysqlclient
 
