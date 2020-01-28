@@ -11,6 +11,7 @@ def signin_view(request):
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
         user = authenticate(username=username, password=password)
+        request.session['user_id'] = user.id
         login(request, user)
         if next:
             return redirect(next)
@@ -39,5 +40,9 @@ def signup_view(request):
 
 
 def signout_view(request):
-    logout(request)
+    try:
+        logout(request)
+        del request.session['user_id']
+    except KeyError:
+        pass
     return redirect('/')
