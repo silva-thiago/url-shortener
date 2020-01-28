@@ -20,9 +20,9 @@
                 <tbody>
                 {% for object in objects %}
                 <tr>
-                    <td>{{ object.generatedDate }}</td>
-                    <td><a href="{{ object.urlInput }}" target="_blank">{{ object.urlInput }}</a></td>
-                    <td><a href="{{ object.urlOutput }}" target="_blank">{{ object.urlOutput }}</a></td>
+                    <td>{{ object.generated_date }}</td>
+                    <td><a href="{{ object.url_input }}" target="_blank">{{ object.url_input }}</a></td>
+                    <td><a href="{{ object.url_output }}" target="_blank">{{ object.url_output }}</a></td>
                 </tr>
                 {% endfor %}
                 </tbody>
